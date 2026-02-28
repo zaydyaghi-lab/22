@@ -4,18 +4,93 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Interactive Design Lab</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .tool { margin-bottom: 20px; }
+        .color-preview { width: 100px; height: 100px; border: 1px solid #000; }
+    </style>
 </head>
 <body>
-    <h1>Welcome to the Interactive Design Lab</h1>
-    <p>This lab explores various aspects of interactive design.
-    </p>
-    <h2>Features</h2>
-    <ul>
-        <li>Interactive elements</li>
-        <li>User engagement metrics</li>
-        <li>Dynamic content updates</li>
-    </ul>
-    <h2>Contact</h2>
-    <p>For inquiries, please reach out at <a href="mailto:info@interactive-design-lab.com">info@interactive-design-lab.com</a>.</p>
+    <h1>Interactive Design Lab</h1>
+
+    <div class="tool">
+        <h2>Color Picker</h2>
+        <input type="color" id="colorPicker" value="#ff0000" />
+        <div class="color-preview" id="colorPreview" style="background-color: #ff0000;"></div>
+    </div>
+
+    <div class="tool">
+        <h2>Gradient Generator</h2>
+        <input type="color" id="gradientColor1" value="#ff0000" />
+        <input type="color" id="gradientColor2" value="#0000ff" />
+        <div class="color-preview" id="gradientPreview" style="background: linear-gradient(to right, #ff0000, #0000ff); height: 100px;"></div>
+    </div>
+
+    <div class="tool">
+        <h2>Shadow Tester</h2>
+        <input type="text" id="shadowText" placeholder="Add text here..." />
+        <input type="range" id="shadowOffsetX" min="0" max="50" value="10" />
+        <input type="range" id="shadowOffsetY" min="0" max="50" value="10" />
+        <input type="range" id="shadowBlur" min="0" max="50" value="10" />
+        <div id="shadowPreview" style="border: 1px solid #000;"></div>
+    </div>
+
+    <div class="tool">
+        <h2>Typography Tool</h2>
+        <input type="text" id="typographyText" placeholder="Sample Text" />
+        <select id="fontSizeSelect">
+            <option value="16">16px</option>
+            <option value="20">20px</option>
+            <option value="24">24px</option>
+        </select>
+        <select id="fontFamilySelect">
+            <option value="Arial">Arial</option>
+            <option value="Georgia">Georgia</option>
+            <option value="Courier">Courier New</option>
+        </select>
+        <div id="typographyPreview" style="border: 1px solid #000; padding: 10px;">
+            Sample Text
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('colorPicker').addEventListener('input', function() {
+            const color = this.value;
+            document.getElementById('colorPreview').style.backgroundColor = color;
+        });
+
+        document.getElementById('gradientColor1').addEventListener('input', updateGradient);
+        document.getElementById('gradientColor2').addEventListener('input', updateGradient);
+        function updateGradient() {
+            const color1 = document.getElementById('gradientColor1').value;
+            const color2 = document.getElementById('gradientColor2').value;
+            document.getElementById('gradientPreview').style.background = `linear-gradient(to right, ${color1}, ${color2})`;
+        }
+
+        document.getElementById('shadowText').addEventListener('input', updateShadow);
+        document.getElementById('shadowOffsetX').addEventListener('input', updateShadow);
+        document.getElementById('shadowOffsetY').addEventListener('input', updateShadow);
+        document.getElementById('shadowBlur').addEventListener('input', updateShadow);
+        function updateShadow() {
+            const text = document.getElementById('shadowText').value;
+            const offsetX = document.getElementById('shadowOffsetX').value;
+            const offsetY = document.getElementById('shadowOffsetY').value;
+            const blur = document.getElementById('shadowBlur').value;
+            document.getElementById('shadowPreview').innerText = text;
+            document.getElementById('shadowPreview').style.textShadow = `${offsetX}px ${offsetY}px ${blur}px rgba(0, 0, 0, 0.5)`;
+        }
+
+        document.getElementById('typographyText').addEventListener('input', updateTypography);
+        document.getElementById('fontSizeSelect').addEventListener('change', updateTypography);
+        document.getElementById('fontFamilySelect').addEventListener('change', updateTypography);
+        function updateTypography() {
+            const text = document.getElementById('typographyText').value;
+            const fontSize = document.getElementById('fontSizeSelect').value;
+            const fontFamily = document.getElementById('fontFamilySelect').value;
+            document.getElementById('typographyPreview').innerText = text;
+            document.getElementById('typographyPreview').style.fontSize = fontSize + 'px';
+            document.getElementById('typographyPreview').style.fontFamily = fontFamily;
+        }
+    </script>
 </body>
 </html>
