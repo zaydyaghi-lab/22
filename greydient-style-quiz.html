@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greydient Style Quiz</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        .quiz-container { width: 80%; margin: auto; }
+        h1 { text-align: center; }
+        .question { margin: 20px 0; }
+        .question label { display: block; margin: 5px 0; }
+        .submit-button { margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <div class="quiz-container">
+        <h1>Interactive Design Style Questionnaire</h1>
+        <form id="quiz-form">
+            <div class="question">
+                <label>1. Which color palette do you prefer?</label>
+                <input type="radio" name="color" value="warm"> Warm Colors
+                <input type="radio" name="color" value="cool"> Cool Colors
+            </div>
+            <div class="question">
+                <label>2. What type of layout do you like best?</label>
+                <input type="radio" name="layout" value="grid"> Grid Layout
+                <input type="radio" name="layout" value="flex"> Flex Layout
+                <input type="radio" name="layout" value="single"> Single Column Layout
+            </div>
+            <div class="question">
+                <label>3. Which typography style resonates with you?</label>
+                <input type="radio" name="typography" value="serif"> Serif Fonts
+                <input type="radio" name="typography" value="sans-serif"> Sans-Serif Fonts
+                <input type="radio" name="typography" value="monospace"> Monospace Fonts
+            </div>
+            <div class="question">
+                <label>4. Do you prefer minimalistic or ornate designs?</label>
+                <input type="radio" name="design-style" value="minimal"> Minimalistic
+                <input type="radio" name="design-style" value="ornate"> Ornate
+            </div>
+            <div class="question">
+                <label>5. How do you feel about patterns?</label>
+                <input type="radio" name="patterns" value="like"> I like them
+                <input type="radio" name="patterns" value="dislike"> I dislike them
+            </div>
+            <div class="question">
+                <label>6. What kind of imagery appeals to you?</label>
+                <input type="radio" name="imagery" value="photography"> Photography
+                <input type="radio" name="imagery" value="illustration"> Illustrations
+                <input type="radio" name="imagery" value="abstract"> Abstract Art
+            </div>
+            <div class="question">
+                <label>7. Which design trend interests you the most?</label>
+                <input type="radio" name="trend" value="flat"> Flat design
+                <input type="radio" name="trend" value="3d"> 3D design
+                <input type="radio" name="trend" value="neumorphism"> Neumorphism
+            </div>
+            <div class="question">
+                <label>8. How important is functionality over aesthetics for you?</label>
+                <input type="radio" name="importance" value="functional"> Extremely Important
+                <input type="radio" name="importance" value="aesthetic"> Aesthetic is more important
+            </div>
+            <div class="question">
+                <label>9. What is your favorite type of illustration?</label>
+                <input type="radio" name="illustration-type" value="flat"> Flat Illustrations
+                <input type="radio" name="illustration-type" value="3d"> 3D Illustrations
+                <input type="radio" name="illustration-type" value="cartoon"> Cartoon Style
+            </div>
+            <div class="question">
+                <label>10. Do you prefer bright or muted colors?</label>
+                <input type="radio" name="color-preference" value="bright"> Bright
+                <input type="radio" name="color-preference" value="muted"> Muted
+            </div>
+            <div class="question">
+                <label>11. How do you feel about texture in design?</label>
+                <input type="radio" name="texture" value="love"> I love it
+                <input type="radio" name="texture" value="hate"> I hate it
+            </div>
+            <div class="question">
+                <label>12. What is your ideal user experience?</label>
+                <input type="radio" name="experience" value="intuitive"> Intuitive and easy to navigate
+                <input type="radio" name="experience" value="challenging"> Challenging and engaging
+            </div>
+            <div class="question">
+                <label>13. How do you feel about white space?</label>
+                <input type="radio" name="white-space" value="like"> I like it
+                <input type="radio" name="white-space" value="dislike"> I dislike it
+            </div>
+            <div class="question">
+                <label>14. Which mobile app design do you prefer?</label>
+                <input type="radio" name="app-design" value="ios"> iOS Design
+                <input type="radio" name="app-design" value="android"> Android Design
+                <input type="radio" name="app-design" value="cross-platform"> Cross-Platform Design
+            </div>
+            <div class="question">
+                <label>15. How do you prefer to receive recommendations?</label>
+                <input type="radio" name="recommendations" value="personalized"> Personalized Recommendations
+                <input type="radio" name="recommendations" value="general"> General Audience Recommendations
+            </div>
+            <button type="submit" class="submit-button">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
