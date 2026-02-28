@@ -1,0 +1,17 @@
+:root {
+  --primary-color: #1E90FF;  /* Dodger Blue */
+  --secondary-color: #FF6347;  /* Tomato */
+  --accent-color: #FFD700;      /* Gold */
+  --background-color: #FFFFFF;    /* White */
+  --text-color: #000000;          /* Black */
+
+  /* Additional color palettes */
+  --palette1-primary: #FF7F50;   /* Coral */
+  --palette1-secondary: #4682B4;  /* Steel Blue */
+
+  --palette2-primary: #32CD32;    /* Lime Green */
+  --palette2-secondary: #8B008B;  /* Dark Magenta */
+
+  --palette3-primary: #EE82EE;    /* Violet */
+  --palette3-secondary: #FFD700;   /* Gold */
+}
